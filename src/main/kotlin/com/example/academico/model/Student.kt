@@ -12,7 +12,6 @@ class Student {
      var id: Long? =null
      var name: String? = null
      var lastname: String? = null
-     var semester: String? = null
      var gender: String? = null
      var age: Long? = null
 }

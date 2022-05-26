@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.*
 
 
 @RestController
-@RequestMapping("/Teacher")
+@RequestMapping("/teacher")
 @CrossOrigin(methods = [RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH,RequestMethod.DELETE])
-class `Teacher control` {
+class TeacherController {
     @Autowired
     lateinit var teacherService: TeacherService
 

@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS director (
   officeHour VARCHAR (100) NOT NULL,
   age INT,
 
+
 PRIMARY KEY (id)
 
 );

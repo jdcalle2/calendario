@@ -7,12 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/Director")
+@RequestMapping("/director")
 @CrossOrigin(methods = [RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH,RequestMethod.DELETE])
 
-class `Director control` {
+class DirectorController {
     @Autowired
     lateinit var directorService: DirectorService
+
 
     @GetMapping
     fun list():List<Director> {

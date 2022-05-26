@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.*
 
 
 @RestController
-@RequestMapping("/Student")
+@RequestMapping("/student")
 @CrossOrigin(methods = [RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH,RequestMethod.DELETE])
-class `Student control`  {
+class StudentController  {
     @Autowired
     lateinit var studentService: StudentService
 
@@ -20,6 +20,10 @@ class `Student control`  {
     @GetMapping("/{id}")
     fun listById (@PathVariable("id") id: Long): Student?{
         return studentService.getById(id)
+    }
+    @GetMapping("/age/{age}")
+    fun listbyAge (@PathVariable("age") age: Long): List<Student>? {
+        return studentService.getByAge(age)
     }
 
     @PostMapping

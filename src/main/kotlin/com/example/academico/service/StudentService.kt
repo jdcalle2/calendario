@@ -21,6 +21,9 @@ class StudentService {
     fun getById (id: Long?):Student?{
         return studentRepository.findById(id)
     }
+    fun getByAge (age: Long?):List<Student>? {
+        return studentRepository.getListAge (age)
+    }
 
     fun save (student: Student): Student {
         try {
@@ -47,7 +50,6 @@ class StudentService {
         response.apply {
             name = student.name
             lastname = student.lastname
-            semester = student.semester
             gender = student.gender
             age  = student.age
         }
