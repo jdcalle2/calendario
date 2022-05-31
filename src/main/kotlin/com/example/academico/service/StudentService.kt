@@ -1,4 +1,6 @@
 package com.example.academico.service
+
+
 import com.example.academico.model.Student
 import com.example.academico.repository.StudentRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -18,7 +20,7 @@ class StudentService {
         return studentRepository.findAll()
 
     }
-    fun getById (id: Long?):Student?{
+    fun getById (id: Long?):Student?  {
         return studentRepository.findById(id)
     }
     fun getByAge (age: Long?):List<Student>? {
@@ -30,7 +32,7 @@ class StudentService {
             student.name?.takeIf { it.trim().isNotEmpty() }
                 ?: throw Exception("nombre no debe ser vacio")
             return studentRepository.save(student)
-        }catch (ex : Exception){
+        }catch (ex : Exception) {
             throw ResponseStatusException(
                 HttpStatus.NOT_FOUND, ex.message, ex)
         }
@@ -91,8 +93,6 @@ class StudentService {
                 HttpStatus.BAD_REQUEST, "Dieta No Encontrada")
         }
     }
-
-
 
 
 }

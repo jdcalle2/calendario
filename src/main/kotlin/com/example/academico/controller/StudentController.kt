@@ -1,5 +1,6 @@
 package com.example.academico.controller
 
+
 import com.example.academico.model.Student
 import com.example.academico.service.StudentService
 import org.springframework.beans.factory.annotation.Autowired
@@ -21,6 +22,8 @@ class StudentController  {
     fun listById (@PathVariable("id") id: Long): Student?{
         return studentService.getById(id)
     }
+
+
     @GetMapping("/age/{age}")
     fun listbyAge (@PathVariable("age") age: Long): List<Student>? {
         return studentService.getByAge(age)

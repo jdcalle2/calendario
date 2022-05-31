@@ -21,6 +21,10 @@ class DirectorService {
 
     }
 
+    fun getByAge (age: Long?):List<Director>? {
+        return directorRepository.getListAge (age)
+    }
+
     fun getById (id: Long?): Director? {
         return directorRepository.findById(id)
     }

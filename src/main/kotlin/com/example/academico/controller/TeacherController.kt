@@ -2,6 +2,7 @@ package com.example.academico.controller
 
 
 
+import com.example.academico.dto.SubjectDto
 import com.example.academico.model.Teacher
 import com.example.academico.service.TeacherService
 import org.springframework.beans.factory.annotation.Autowired
@@ -19,6 +20,17 @@ class TeacherController {
     fun list():List<Teacher> {
         return teacherService.list()
     }
+
+
+    @GetMapping("/changeName")
+    fun updateOtherName (@RequestBody SubjectDto: SubjectDto): List<Teacher>?{
+        return teacherService.updateOtherName(SubjectDto)
+    }
+    @GetMapping("/age/{age}")
+    fun listbyAge (@PathVariable("age") age: Long): List<Teacher>? {
+        return teacherService.getByAge(age)
+    }
+
     @GetMapping("/{id}")
     fun listById (@PathVariable("id") id: Long): Teacher?{
         return teacherService.getById(id)

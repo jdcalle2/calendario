@@ -2,6 +2,7 @@ package com.example.academico.controller
 
 
 import com.example.academico.model.Director
+import com.example.academico.model.Teacher
 import com.example.academico.service.DirectorService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
@@ -23,6 +24,12 @@ class DirectorController {
     fun listById (@PathVariable("id") id: Long): Director?{
         return directorService.getById(id)
     }
+    @GetMapping("/age/{age}")
+    fun listbyAge (@PathVariable("age") age: Long): List<Director>? {
+        return directorService.getByAge(age)
+    }
+
+
 
     @PostMapping
     fun save(@RequestBody director: Director): Director {
