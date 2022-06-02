@@ -1,6 +1,7 @@
 package com.example.academico.service
 
 
+import com.example.academico.dto.NameDto
 import com.example.academico.model.Student
 import com.example.academico.repository.StudentRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -8,6 +9,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.server.ResponseStatusException
+import javax.transaction.Transactional
 
 
 @Service
@@ -93,6 +95,11 @@ class StudentService {
                 HttpStatus.BAD_REQUEST, "Dieta No Encontrada")
         }
     }
-
+    //import org.springframework.transaction.annotation.Transactional
+    @Transactional
+    fun updateOtherName (nameDto:NameDto): String?{
+        val rowsUpdate=studentRepository.setOtherName(nameDto.name, nameDto.newName)
+        return "${rowsUpdate} rows updated"
+    }
 
 }
