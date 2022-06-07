@@ -20,7 +20,7 @@ class StudentController  {
         return studentService.list()
     }
     @GetMapping("/{id}")
-    fun listById (@PathVariable("id") id: Long): Student?{
+    fun listById (@PathVariable("id") id: Long): Student? {
         return studentService.getById(id)
     }
 
