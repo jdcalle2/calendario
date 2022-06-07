@@ -9,7 +9,7 @@ import java.util.Date
 
 @Component
 class JwtUtil {
-    fun generateToken (userDetails: UserDetails): String{
+    fun generateToken (userDetails: UserDetails): String {
         //Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody()
         return Jwts.builder().setSubject(userDetails.username)
             .setIssuedAt(Date())
