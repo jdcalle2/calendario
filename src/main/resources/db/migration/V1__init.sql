@@ -35,3 +35,15 @@ CREATE TABLE IF NOT EXISTS director (
 PRIMARY KEY (id)
 
 );
+
+CREATE TABLE IF NOT EXISTS futball (
+  id SERIAL,
+  nombre VARCHAR (100) NOT NULL,
+  hora INT,
+  cancha INT
+
+
+
+PRIMARY KEY (id)
+
+);

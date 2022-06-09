@@ -2,7 +2,7 @@ package com.example.academico.controller
 
 
 import com.example.academico.model.Director
-import com.example.academico.model.Teacher
+
 import com.example.academico.service.DirectorService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
