@@ -126,4 +126,42 @@ class StudentService {
             }*/
     }
 
+    fun multiplicacion (coeficiente: Int, digito: Int): Int{
+        val response =coeficiente*digito
+        if (response >= 10)
+            return response - 9
+        return response
+
+    }
+
+    //Uso de un if en la misma linea. Si i es par coeficiente es 2 caso contrario es 1
+    fun sumaValores (nui: String): Long {
+        var sum: Long=0
+        for ( i in 0..8) {
+            val coeficiente = if(i%2 ==0) 2 else 1
+            sum  += multiplicacion(coeficiente,Integer.parseInt(nui[i].toString()) )
+        }
+        return sum
+    }
+
+    fun findDecenaSuperior (sum: Int): Int {//sum=20
+        val division: Int = sum /10 //2
+        val decenaSuperior:Int = (division+1) * 10 //(2+1)*10 = 30
+        var response: Int=decenaSuperior-sum
+        if (decenaSuperior == 10)
+            response=0
+        return response
+
+    }
+
+    fun validarCedula (cedula:String): Boolean {
+        //val sum = sumaValores(cedula)
+        //val resta = findDecenaSuperior(sum)
+        //obtener decimo digito de la cedula[9]
+        // si la resta es igual al 10dig entonces es valida
+        // caso contrario invalida
+        return true
+
+    }
+
 }
