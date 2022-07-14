@@ -1,7 +1,7 @@
 package com.example.academico.service
 
 
-import com.example.academico.dto.NameDto
+
 import com.example.academico.model.Student
 import com.example.academico.repository.StudentRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -24,9 +24,6 @@ class StudentService {
     }
     fun getById (id: Long?):Student?  {
         return studentRepository.findById(id)
-    }
-    fun getByAge (age: Long?):List<Student>? {
-        return studentRepository.getListAge (age)
     }
 
     fun save (student: Student): Student {
@@ -96,11 +93,7 @@ class StudentService {
         }
     }
     //import org.springframework.transaction.annotation.Transactional
-    @Transactional
-    fun updateOtherName (nameDto:NameDto): String?{
-        val rowsUpdate=studentRepository.setOtherName(nameDto.name, nameDto.newName)
-        return "${rowsUpdate} rows updated"
-    }
+
 
     fun validateSerialNumber (serial:String?): Boolean?{
 

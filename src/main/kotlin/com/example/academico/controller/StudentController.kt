@@ -1,7 +1,5 @@
 package com.example.academico.controller
 
-
-import com.example.academico.dto.NameDto
 import com.example.academico.model.Student
 import com.example.academico.service.StudentService
 import org.springframework.beans.factory.annotation.Autowired
@@ -25,19 +23,11 @@ class StudentController  {
     }
 
 
-    @GetMapping("/age/{age}")
-    fun listbyAge (@PathVariable("age") age: Long): List<Student>? {
-        return studentService.getByAge(age)
-    }
-
     @PostMapping
     fun save(@RequestBody student:Student):Student {
         return studentService.save(student)
     }
-    @PostMapping("/change/name")
-    fun updateOtherName (@RequestBody nameDto: NameDto): String?{
-        return studentService.updateOtherName(nameDto)
-    }
+
     @PutMapping
     fun update (@RequestBody student:Student): Student {
         return studentService.update(student)

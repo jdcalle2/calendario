@@ -14,12 +14,7 @@ interface StudentRepository:JpaRepository<Student, Long> {
     fun findById(id:Long?): Student?
 
 
-    @Query(nativeQuery = true)
-    fun getListAge(@Param("age") age: Long?) : List <Student>?
 
-    @Modifying
-    @Query(nativeQuery=true)
-    fun setOtherName (@Param("name")  name:String?, @Param("newName")  newName:String?) : Integer?
 
 }
 
